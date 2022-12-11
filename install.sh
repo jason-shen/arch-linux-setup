@@ -28,7 +28,7 @@ echo "PostInstall starts now"
 # vm gpu
 sudo pacman -Syu --noconfirm xf86-video-qxl
 sudo pacman -S --noconfirm --needed base-devel
-sudo pacman -S --noconfirm --needed xorg-server xorg-xinit git alacritty picom firefox dmenu lxsession arandr fad x11-xserver-utils unzip wget pulseaudio pavucontrol flameshot neovim lxappearance sddm 
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinit git alacritty picom firefox dmenu lxsession arandr unzip wget pulseaudio pavucontrol flameshot neovim lxappearance sddm 
 
 
 echo "installing rust"
@@ -44,6 +44,9 @@ rm -rf yay
 
 echo "installing leftwm"
 yay --noconfirm -S leftwm
+
+echo "install fad"
+yay --noconfirm fad
 
 echo "creating config folders"
 mkdir ~/.config/leftwm
