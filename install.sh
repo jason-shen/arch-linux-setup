@@ -32,7 +32,7 @@ sudo pacman -S --noconfirm --needed xorg-server xorg-xinit git alacritty feh pic
 
 
 echo "installing rust"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # install yay -- AUR package mananger
 echo "installing yay"
@@ -46,10 +46,10 @@ echo "installing leftwm"
 yay --noconfirm -S leftwm
 
 echo "creating config folders"
-mkdir ~/.config/leftwm
+mkdir ~/.config/leftwm/themes
 
 echo "copying default config files"
-cp ./config/leftwm/themes/basic_polybar/ ~/.config/leftwm/
+cp config/leftwm/themes/basic_polybar/ ~/.config/leftwm/themes
 ln -s ~/.config/leftwm/themes/basic_polybar current
 
 echo "installing fonts"
