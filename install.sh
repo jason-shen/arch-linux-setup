@@ -53,13 +53,10 @@ yay --noconfirm -S leftwm
 
 echo "creating config folders"
 mkdir ~/.config/leftwm
-mkdir ~/.config/
 
 echo "copying default config files"
-cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/
-cp /usr/share/doc/sxhkd/examples/background_shell/sxhkdrc ~/.config/sxhkd/
-
-cp /etc/X11/xinit/xinitrc ~/.xinitrc
+cp ./config/leftwm/themes/basic_polybar/ ~/.config/leftwm/
+ln -s ~/.config/leftwm/themes/basic_polybar current
 
 echo "installing fonts"
 # Installing fonts
