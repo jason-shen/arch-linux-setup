@@ -81,13 +81,13 @@ rm -rf Nordzy-cursors
 
 # Enable graphical login and change target from CLI to GUI
 tar -xzvf slice.tar.gz --strip 1 --one-top-level=/usr/share/sddm/themes/slice
-cp -f "$builddir/sddm.conf" /etc/
-systemctl enable sddm
-systemctl set-default graphical.target
+sudo cp -f "$builddir/sddm.conf" /etc/
+sudo systemctl enable sddm
+sudo systemctl set-default graphical.target
 
 
 
 
 
 
-echo "PostInstall starts now"
+echo "PostInstall finishied reboot now....."
