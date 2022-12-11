@@ -1,9 +1,5 @@
 #!/bin/bash
-# Check if Script is Run as Root
-if [[ $EUID -ne 0 ]]; then
-  echo "You must be a root user to run this script, please run sudo ./install.sh" 2>&1
-  exit 1
-fi
+
 # install package
 # pacman -S <package name>
 # uninstall package
@@ -30,9 +26,9 @@ echo "PostInstall starts now"
 # nvidia gpu
 # pacman -Syu --noconfirm nvidia nvidia-tools
 # vm gpu
-pacman -Syu --noconfirm xf86-video-qxl
-pacman -S --noconfirm --needed base-devel
-pacman -S --noconfirm xorg-server xorg-xinit git && \
+sudo pacman -Syu --noconfirm xf86-video-qxl
+sudo pacman -S --noconfirm --needed base-devel
+sudo pacman -S --noconfirm xorg-server xorg-xinit git && \
   alacritty picom firefox dmenu lxsession arandr && \
   fad x11-xserver-utils unzip wget pulseaudio && \
   pavucontrol flameshot neovim lxappearance sddm 
@@ -61,7 +57,7 @@ ln -s ~/.config/leftwm/themes/basic_polybar current
 echo "installing fonts"
 # Installing fonts
 cd "$builddir" || exit
-nala install fonts-font-awesome -y
+sudo yay -S fonts-font-awesome -y
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FiraCode.zip
 unzip FiraCode.zip -d "/home/$username/.fonts"
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
